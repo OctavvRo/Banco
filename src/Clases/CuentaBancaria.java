@@ -1,6 +1,8 @@
 
 package Clases;
 
+import java.util.Scanner;
+
 
 public class CuentaBancaria {
     
@@ -8,11 +10,7 @@ public class CuentaBancaria {
     private String titular;
     private double saldo;
 
-    public CuentaBancaria(int numCuenta, String titular, double saldo) {
-        this.numCuenta = numCuenta;
-        this.titular = titular;
-        this.saldo = saldo;
-    }
+    Scanner e = new Scanner(System.in);
 
     public int getNumCuenta() {
         return numCuenta;
@@ -26,16 +24,22 @@ public class CuentaBancaria {
         return saldo;
     }
 
-    public void setNumCuenta(int numCuenta) {
-        this.numCuenta = numCuenta;
+    public void setNumCuenta() {
+        System.out.println("Ingresa el numero de cuenta: ");
+
+        this.numCuenta = e.nextInt();
     }
 
-    public void setTitular(String titular) {
-        this.titular = titular;
+    public void setTitular() {
+       System.out.println("Ingresa el titular de la cuenta: ");
+
+        this.titular = e.nextLine();
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    public void setSaldo() {
+        System.out.println("Ingresa el saldo de la cuenta: ");
+
+        this.saldo = e.nextDouble();
     }
 
     public void saldoRetirado(double resta){
